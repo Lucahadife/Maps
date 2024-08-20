@@ -1,28 +1,12 @@
 """Maps: Data Abstractions"""
-"""
-C88C Spring 2024:
 
-Please credit any folks in C88C that you collaborated with,
-and any online sources you searched for.
-Remember, it's OK to ask for help, and to search for topics, but
-you may not search for specific solutions or copy any code directly.
-
-List Collaborators:
-
-Credit Any Online Sources (google searches, etc):
-
-
-"""
 
 
 from utils import mean
 
-#############################
 # Phase 1: Data Abstraction #
-#############################
 
 
-# Reviews
 
 def make_review(restaurant_name, score):
     """Return a review data abstraction."""
@@ -76,8 +60,6 @@ def user_score(user, restaurant_name):
 
 def make_restaurant(name, location, categories, price, reviews):
     """Return a restaurant data abstraction."""
-    # "Question 1": You may change this starter implementation however you wish, including
-    # adding more items to the dictionary below.
     return {
         'name': name,
         'location': location,
@@ -106,22 +88,16 @@ def restaurant_price(restaurant):
 def restaurant_scores(restaurant):
     """Return a list of scores, which are numbers from 1 to 5, of the
     restaurant based on the reviews of the restaurant."""
-    # BEGIN Question 1
     return [review_score(r) for r in restaurant['reviews']]
 
-    # END Question 1
 
 
 ### === +++ RESTAURANT ABSTRACTION BARRIER +++ === ###
 
 def restaurant_num_scores(restaurant):
     """Return the number of scores for restaurant."""
-    # BEGIN Question 2
     return len(restaurant_scores(restaurant))
-    # END Question 2
 
 def restaurant_mean_score(restaurant):
     """Return the average score for restaurant."""
-    # BEGIN Question 2
     return mean(restaurant_scores(restaurant))
-    # END Question 2
